@@ -134,6 +134,9 @@ Designed to work with [crazy-max/docker-rtorrent-rutorrent](https://github.com/c
 ## Donate
 
 <span align="center">
+
 <br />
+
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DX7SKZKNE3E5U)
+
 </span>
