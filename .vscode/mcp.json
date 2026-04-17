@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "rtorrent": {
+      "command": "node",
+      "args": ["c:\\Users\\adpierr1\\Documents\\Perso\\rtorrent-mcp\\dist\\index.js"],
+      "env": {
+        "RTORRENT_URL": "http://localhost:8000/RPC2",
+        "RTORRENT_USERNAME": "",
+        "RTORRENT_PASSWORD": ""
+      }
+    }
+  }
+}

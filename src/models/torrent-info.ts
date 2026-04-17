@@ -1,0 +1,33 @@
+export interface TorrentInfo {
+  hash: string;
+  name: string;
+  size_bytes: number;
+  completed_bytes: number;
+  down_rate: number;
+  up_rate: number;
+  down_total: number;
+  up_total: number;
+  ratio: number;
+  state: number;
+  is_open: number;
+  is_active: number;
+  complete: number;
+  is_hash_checking: number;
+  is_multi_file: number;
+  peers_connected: number;
+  directory: string;
+  creation_date: number;
+  load_date: number;
+  left_bytes: number;
+  chunks_hashed: number;
+  size_chunks: number;
+  completed_chunks: number;
+  priority: number;
+  priority_str: string;
+  message: string;
+  is_private: number;
+  timestamp_started: number;
+  timestamp_finished: number;
+  tracker_size: number;
+  trackers: string[];
+}
