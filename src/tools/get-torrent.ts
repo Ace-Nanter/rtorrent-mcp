@@ -85,7 +85,7 @@ export function registerGetTorrent(
           ``,
           `── Dates ──`,
           `Created: ${formatTimestamp(torrent.creation_date)}`,
-          `Added: ${formatTimestamp(torrent.load_date)}`,
+          `Added: ${formatTimestamp(torrent.added_date)}${torrent.added_date !== torrent.load_date ? " (persistent)" : ""}`,
           `Started: ${formatTimestamp(torrent.timestamp_started)}`,
           `Finished: ${formatTimestamp(torrent.timestamp_finished)}`,
           ``,

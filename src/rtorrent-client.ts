@@ -79,6 +79,7 @@ export class RTorrentClient {
       "d.timestamp.started=",
       "d.timestamp.finished=",
       "d.tracker_size=",
+      "d.custom=tm_loaded=",
     ])) as unknown[][];
 
     const torrents = result.map((row) => ({
@@ -101,6 +102,10 @@ export class RTorrentClient {
       directory: row[16] as string,
       creation_date: row[17] as number,
       load_date: row[18] as number,
+      added_date: (() => {
+        const custom = row[30] as string;
+        return custom !== "" && custom !== "0" ? Number(custom) : (row[18] as number);
+      })(),
       left_bytes: row[19] as number,
       chunks_hashed: row[20] as number,
       size_chunks: row[21] as number,
@@ -165,6 +170,7 @@ export class RTorrentClient {
         this.call("d.timestamp.started", [sanitized]),
         this.call("d.timestamp.finished", [sanitized]),
         this.call("d.tracker_size", [sanitized]),
+        this.call("d.custom", [sanitized, "tm_loaded"]),
       ]),
       this.call("t.multicall", [sanitized, "", "t.url="]).then(
         (res) => (res as string[][]).map((r) => r[0]),
@@ -192,6 +198,10 @@ export class RTorrentClient {
       directory: results[15] as string,
       creation_date: results[16] as number,
       load_date: results[17] as number,
+      added_date: (() => {
+        const custom = results[29] as string;
+        return custom !== "" && custom !== "0" ? Number(custom) : (results[17] as number);
+      })(),
       left_bytes: results[18] as number,
       chunks_hashed: results[19] as number,
       size_chunks: results[20] as number,

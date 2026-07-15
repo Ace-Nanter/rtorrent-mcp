@@ -18,6 +18,7 @@ export interface TorrentInfo {
   directory: string;
   creation_date: number;
   load_date: number;
+  added_date: number;
   left_bytes: number;
   chunks_hashed: number;
   size_chunks: number;

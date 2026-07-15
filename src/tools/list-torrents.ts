@@ -43,7 +43,7 @@ export function registerListTorrents(
             `   Ratio: ${ratio} | Peers: ${t.peers_connected}`,
             `   Priority: ${t.priority_str} | Private: ${t.is_private ? "Yes" : "No"}`,
             `   Trackers: ${t.trackers.length > 0 ? t.trackers.join(", ") : "None"}`,
-            `   Added: ${formatTimestamp(t.load_date)} | Created: ${formatTimestamp(t.creation_date)}`,
+            `   Added: ${formatTimestamp(t.added_date)}${t.added_date !== t.load_date ? " (persistent)" : ""} | Created: ${formatTimestamp(t.creation_date)}`,
             `   Started: ${formatTimestamp(t.timestamp_started)} | Finished: ${formatTimestamp(t.timestamp_finished)}`,
             `   Directory: ${t.directory}`,
             t.message ? `   Message: ${t.message}` : null,
